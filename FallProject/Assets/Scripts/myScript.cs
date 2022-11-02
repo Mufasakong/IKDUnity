@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class myScript : MonoBehaviour
 {
-    public int currentAge = 19;
-    public int addAge = 1;
+    public int currentVar;
+    public string playerName = "CrateHead";
+    private int level;
 
     /// Start is called before the first frame update
     void Start()
     {
-        Debug.Log("What's 9 + 10?" + "\n" + currentAge);
-        
+      Profile(playerName);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ComputeAge();
+        
     }
 
-    void ComputeAge() {
-        Debug.Log(currentAge + addAge);
+    void Profile(string name) {
+        Debug.Log(name + " | Level: " + level);
+    }
+    
+    public void LevelManagement() {
+        level++;
+        Debug.Log(playerName + " | Level: " + level);
     }
 }
